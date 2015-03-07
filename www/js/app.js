@@ -43,6 +43,11 @@ angular.module('directoryApp', ['ionic','directoryApp.controller','directoryApp.
     controller : 'agedCtrl'
 
   })
+   .state('agedDetail',{
+    url:'/agedDetail/:idListings',
+    templateUrl:'template/agedDetail.html',
+    controller:'agedDetails'
+  })
 
   .state('bussiness',{
     url:'/bussiness',
@@ -50,11 +55,21 @@ angular.module('directoryApp', ['ionic','directoryApp.controller','directoryApp.
     controller : 'bussinessCtrl'
 
   })
+  .state('bussinessDetail',{
+    url:'/bussinessDetail/:idListings',
+    templateUrl:'template/bussinessDetail.html',
+    controller:'bussinessDetails'
+  })
   .state('government',{
     url:'/government',
     templateUrl:'template/government.html',
     controller : 'governmentCtrl'
 
+  })
+  .state('governmentDetail',{
+    url:'/governmentDetail/:idListings',
+    templateUrl:'template/governmentDetail.html',
+    controller:'governmentDetails'
   })
 
   $urlRouterProvider.otherwise('/home');

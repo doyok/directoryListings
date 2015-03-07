@@ -55,6 +55,14 @@ angular.module('directoryApp.controller', [])
 
 	
 })
+.controller('agedDetails',function ($scope,$stateParams,agedApi) {
+
+	agedApi.get($stateParams.idListings).then(function(data){
+		$scope.agedDetail = data;
+		console.log(data);
+	})
+	
+})
 
 .controller('bussinessCtrl', function ($scope,bussinessApi) {
 
@@ -79,6 +87,14 @@ angular.module('directoryApp.controller', [])
 
 	
 })
+.controller('bussinessDetails',function ($scope,$stateParams,bussinessApi) {
+
+	bussinessApi.get($stateParams.idListings).then(function(data){
+		$scope.childDetail = data;
+		console.log(data);
+	})
+	
+})
 
 .controller('governmentCtrl', function ($scope,governmentApi) {
 
@@ -101,5 +117,14 @@ angular.module('directoryApp.controller', [])
 		})
 	}
 
+	
+})
+
+.controller('governmentDetails',function ($scope,$stateParams,governmentApi) {
+
+	governmentApi.get($stateParams.idListings).then(function(data){
+		$scope.childDetail = data;
+		console.log(data);
+	})
 	
 })

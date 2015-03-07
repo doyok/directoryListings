@@ -22,13 +22,14 @@
             </select>
 	      </label>
 	      <div class="padding">
-	        <input type="submit" class="button button-block button-positive" value="Search" ng-click="submit(agedcare)">
+	        <input type="submit" class="button button-block button-assertive" value="Search" ng-click="submit(agedcare)">
 	      </div>
       	</form>
       	<div class="list card">
 	      <div class="list padding" ng-repeat="a in busyListing track by $index">
-	        <a class="item" href="#/bussinessDetail/{{a.id}}">
-	          <h2 class="merah">{{ a.title }}</h2>
+	        <a class="item item-avatar" href="#/bussinessDetail/{{a.id}}">
+	        	<img src="/img/icon.png" width="100%">
+	          	<h2 class="merah">{{ a.title }}</h2>
 	        </a>
 	      </div>
 	    </div>
