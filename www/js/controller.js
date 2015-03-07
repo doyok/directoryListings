@@ -55,3 +55,51 @@ angular.module('directoryApp.controller', [])
 
 	
 })
+
+.controller('bussinessCtrl', function ($scope,bussinessApi) {
+
+	$scope.agedcare = {};
+	var param = function(data) {
+		        var returnString = '';
+		        for (d in data){
+		            if (data.hasOwnProperty(d))
+		               returnString += d + '=' + data[d] + '&';
+		        }
+		        // Remove last ampersand and return
+		        return returnString.slice( 0, returnString.length - 1 );
+		  };
+	$scope.submit = function(agedcare){
+
+		bussinessApi.all($scope.agedcare.childcare_key,$scope.agedcare.childcare_location).then(function(data){
+			$scope.busyListing = data;
+			console.log($scope.busyListing);
+
+		})
+	}
+
+	
+})
+
+.controller('governmentCtrl', function ($scope,governmentApi) {
+
+	$scope.agedcare = {};
+	var param = function(data) {
+		        var returnString = '';
+		        for (d in data){
+		            if (data.hasOwnProperty(d))
+		               returnString += d + '=' + data[d] + '&';
+		        }
+		        // Remove last ampersand and return
+		        return returnString.slice( 0, returnString.length - 1 );
+		  };
+	$scope.submit = function(agedcare){
+
+		governmentApi.all($scope.agedcare.childcare_key,$scope.agedcare.childcare_location).then(function(data){
+			$scope.govListing = data;
+			console.log($scope.govListing);
+
+		})
+	}
+
+	
+})

@@ -1,0 +1,18 @@
+<ion-view view-title="Title">
+	<div class="bar bar-header">
+		
+	  	<div class="title"><img src="img/gov_logo.png" height="100%"></div>
+	</div>
+	<ion-content class="has-header">
+		<div class="list card">
+	      	<div class="list" ng-repeat="x in childDetail">
+	          <h2 class="merah">{{ x.title }}</h2>
+	          <p>{{x.description}}</p>
+	          <address>{{x.listing_address1}},{{x.listing_address2}}</address>
+	          <p>{{x.phone}}</p>
+	          <img src="https://maps.googleapis.com/maps/api/staticmap?center={{x.latitude}},{{x.longitude}}&zoom=15&size=640x400&maptype=roadmap&markers=color:blue%7Clabel:S%7C{{x.latitude}},{{x.longitude}}">
+	          
+	      	</div>
+      	</div>
+	</ion-content>
+</ion-view>

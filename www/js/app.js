@@ -13,6 +13,10 @@ angular.module('directoryApp', ['ionic','directoryApp.controller','directoryApp.
   });
 })
 
+.config(function ( $httpProvider) {        
+        delete $httpProvider.defaults.headers.common['X-Requested-With'];
+    })
+
 .config(function ($stateProvider,$urlRouterProvider) {
 
   $stateProvider
@@ -40,6 +44,21 @@ angular.module('directoryApp', ['ionic','directoryApp.controller','directoryApp.
 
   })
 
+  .state('bussiness',{
+    url:'/bussiness',
+    templateUrl:'template/bussines.html',
+    controller : 'bussinessCtrl'
+
+  })
+  .state('government',{
+    url:'/government',
+    templateUrl:'template/government.html',
+    controller : 'governmentCtrl'
+
+  })
+
   $urlRouterProvider.otherwise('/home');
   
 })
+
+
